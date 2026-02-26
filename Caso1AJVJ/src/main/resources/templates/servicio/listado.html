@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/fragmentos :: head}"></head>
+    <body>
+        <header th:replace="~{layout/fragmentos :: header}"></header>
+        
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow">
+                        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                            <h4><i class="fas fa-list"></i> Gestión de Servicios</h4>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#agregarServicio">
+                                <i class="fas fa-plus"></i> Nuevo Servicio
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Servicio</th>
+                                        <th>Precio</th>
+                                        <th>Categoría</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="s : ${servicios}">
+                                        <td th:text="${s.id}"></td>
+                                        <td th:text="${s.nombre}"></td>
+                                        <td th:text="'₡' + ${s.precio}"></td>
+                                        <td th:text="${s.categoria.nombre}"></td>
+                                        <td>
+                                            <a th:href="@{/servicio/modificar/}+${s.id}" class="btn btn-warning btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a th:href="@{/servicio/eliminar/}+${s.id}" class="btn btn-danger btn-sm" 
+                                               onclick="return confirm('¿Seguro que desea eliminar este servicio?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="~{layout/fragmentos :: footer}"></footer>
+    </body>
+</html>

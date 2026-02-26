@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    
+    <head th:replace="~{layout/fragmentos :: head}"></head>
+    
+    <body>
+        <header th:replace="~{layout/fragmentos :: header}"></header>
+        
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h3><i class="fas fa-envelope"></i> Contáctenos</h3>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-muted text-center mb-4">
+                                Utilice el siguiente formulario para enviarnos sus quejas, sugerencias o consultas generales.
+                            </p>
+                            
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Ej: Andrés Vargas" required/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipo" class="form-label">Tipo de Mensaje</label>
+                                    <select class="form-select" id="tipo">
+                                        <option value="sugerencia">Sugerencia</option>
+                                        <option value="queja">Queja</option>
+                                        <option value="consulta">Consulta General</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" rows="4" placeholder="Escriba aquí sus comentarios..." required></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="button" class="btn btn-primary" onclick="alert('¡Gracias! Su mensaje ha sido enviado (Simulación).')">
+                                        <i class="fas fa-paper-plane"></i> Enviar Comentarios
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="~{layout/fragmentos :: footer}"></footer>
+    </body>
+</html>

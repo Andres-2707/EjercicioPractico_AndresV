@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/fragmentos :: head}"></head>
+    <body>
+        <header th:replace="~{layout/fragmentos :: header}"></header>
+        <div class="container mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white d-flex justify-content-between">
+                    <h4><i class="fas fa-tags"></i> Categorías</h4>
+                    <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addCategoria">Nueva Categoría</button>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="c : ${categorias}">
+                                <td th:text="${c.id}"></td>
+                                <td th:text="${c.nombre}"></td>
+                                <td>
+                                    <a th:href="@{/categoria/eliminar/}+${c.id}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="~{layout/fragmentos :: footer}"></footer>
+    </body>
+</html>

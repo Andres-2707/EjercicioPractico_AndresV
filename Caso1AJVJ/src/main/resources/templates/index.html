@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    
+    <head th:replace="~{layout/fragmentos :: head}"></head>
+    
+    <body>
+        <header th:replace="~{layout/fragmentos :: header}"></header>
+        
+        <div class="container mt-5">
+            <div class="row text-center">
+                <div class="col-12 mb-4">
+                    <h1 class="display-4 text-primary">¡Bienvenidos a Elegance!</h1>
+                    <p class="lead">Tu belleza es nuestra pasión. Descubre nuestro nuevo servicio destacado.</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <div class="card border-primary shadow">
+                        <div class="card-body">
+                            <h2 class="card-title text-success">✨ Promoción del Mes ✨</h2>
+                            <h3 class="text-dark">Balayage + Tratamiento Hidratante</h3>
+                            <p class="card-text fs-5">Luce un cabello espectacular esta temporada con nuestra técnica de Balayage profesional. ¡Reserva hoy y obtén un tratamiento hidratante completamente gratis!</p>
+                            <a th:href="@{/reserva/listado}" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Reservar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center mt-4 mt-md-0">
+                    <div class="ratio ratio-16x9 shadow-sm">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Video Promocional" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="~{layout/fragmentos :: footer}"></footer>
+    </body>
+</html>
